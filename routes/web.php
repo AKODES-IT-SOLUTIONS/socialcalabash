@@ -27,7 +27,9 @@ Route::get('/test', [CronJobsController::class, 'test']);
 
 //LINKEDIN ROUTES from official Microsoft site
 Route::get('/linkedin/login', [LinkedinController::class, 'linkedinLogin'])->name('linkedin.login')->middleware(isUser::class);
+
 Route::get('/linkedin/callback', [LinkedinController::class, 'linkedinCallback'])->name('linkedin.callback')->middleware(isUser::class);
+
 Route::post('/linkedin/post', [LinkedinController::class, 'postToLinkedIn'])->name('linkedin.post')->middleware(isUser::class);
 
 
